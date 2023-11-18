@@ -1,0 +1,6 @@
+python localDnsServer.py
+python rootDnsServer.py
+python tldDnsServer.py
+python authoritativeDnsServer.py
+
+python client.py
