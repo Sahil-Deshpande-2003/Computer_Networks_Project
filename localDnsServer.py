@@ -185,7 +185,7 @@ namely, dns.umass.edu. Finally, the local DNS server resends the query messsage 
 
             rootMessage = "Root Result"
             tldNameServer = generalServerHandler(
-                userInput, rootNameServer, ROOT_SERVER_PORT, rootMessage)
+                userInput, rootNameServer, ROOT_SERVER_PORT, rootMessage) # PERFORM A DNS QUERY TO ROOT SERVER
             '''
             If the root input is not found in the cache, the generalServerHandler function is called to perform a DNS query to the root server. The result (tldNameServer) is then stored in the cache
 
@@ -193,7 +193,7 @@ namely, dns.umass.edu. Finally, the local DNS server resends the query messsage 
             '''
         cache[rootInput] = tldNameServer
         tldMessage = "TLD Result"
-        authoritativeServer = generalServerHandler(
+        authoritativeServer = generalServerHandler( # PERFORM A DNS QUERY TO TLD SERVER
             userInput, tldNameServer, TLD_SERVER_PORT, tldMessage)
         
         '''
@@ -202,7 +202,7 @@ namely, dns.umass.edu. Finally, the local DNS server resends the query messsage 
 
         cache[tldInput] = authoritativeServer
         authoritativeMessage = "Authoritative Result"
-        finalIpAddress = generalServerHandler(
+        finalIpAddress = generalServerHandler( # PERFORM A DNS QUERY TO AUTHORITATIVE SERVER
             userInput, authoritativeServer, AUTHORITATIVE_SERVER_PORT, authoritativeMessage)
         
         '''
