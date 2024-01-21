@@ -1,4 +1,4 @@
-# DNS-Server that implements recursive and iterative communication
+# DNS-Server that implements iterative query
 
 A command line Project which helps to understand how the DNS servers communicate with each other.
 
